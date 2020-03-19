@@ -27,7 +27,7 @@ function popFront(arr){
     arr.pop();
     return arr;
 }
-
+//myArr = []
 console.log(popFront(myArr));
 
 //Insert At
@@ -43,6 +43,7 @@ function insertAt(arr, idx, val){
     }
     return arr;
 }
+//myArr = []
 
 //Romove At
 
@@ -55,6 +56,7 @@ function removeAt(arr, idx){
     arr.pop();
     return arr;
 }
+//myArr = []
 console.log(removeAt(myArr,2))
 
 //Swap Pairs
@@ -69,7 +71,7 @@ function swapPairs(arr){
     }
     return arr;
 }
-
+//myArr = []
 console.log(swapPairs(myArr));
 
 //Remove Dups
@@ -89,6 +91,31 @@ function removeDuplicates(arr){
     return newArr;
 }
 
-var myArry = [1,1,1,5,35,35,98,103,114];
+var myArr = [1,1,1,5,35,35,98,103,114];
 
-console.log(removeDuplicates(myArry));
+console.log(removeDuplicates(myArr));
+
+//Min to Front
+
+function minToFront(arr){ 
+    var minIdx = 0;
+    var min = arr[0];
+    var temp = arr[0];
+    
+    for(var i = 1; i < arr.length; i++){
+        if(arr[i] < min){
+            min = arr[i];
+            minIdx = i;
+        }
+    }
+    for(var j = minIdx; j > 0; j--){
+        temp = arr[j-1];
+        arr[j-1] = arr[j];
+        arr[j] = temp;
+    }
+return arr;
+}
+
+myArr = [13,57,85,3,2,21,150];
+
+console.log(minToFront(myArr));
